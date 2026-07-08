@@ -1,0 +1,342 @@
+/* ==========================================================================
+   Rental Service Marketplace - Hoja de estilos compartida
+   Usada por todas las pantallas del prototipo.
+   ========================================================================== */
+
+:root {
+    --primary-color: #9F172A; /* Color oficial del proyecto */
+    --secondary-color: #3882F6; /* Color secundario */
+    --neutral-dark: #1E293B;
+    --neutral-light: #F8FAFC;
+    --surface-card: #FFFFFF;
+    --border-color: #CBD5E1;
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--neutral-light);
+    color: var(--neutral-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   Header y navegación (compartidos en todas las pantallas)
+   ========================================================================== */
+
+.site-header {
+    background-color: var(--neutral-dark);
+    color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.site-header h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--secondary-color);
+}
+
+/* ==========================================================================
+   Footer (compartido en todas las pantallas)
+   ========================================================================== */
+
+.site-footer {
+    background-color: var(--neutral-dark);
+    color: #94A3B8;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .site-footer {
+        flex-direction: row;
+    }
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: #94A3B8;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Componentes de formulario reutilizables (usados en Autenticación y
+   futuras pantallas con formularios: Registro, Publicar Servicio, etc.)
+   ========================================================================== */
+
+.surface-card {
+    background-color: var(--surface-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--neutral-dark);
+}
+
+.text-field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.text-field:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(56, 130, 246, 0.1);
+}
+
+.btn-filled {
+    width: 100%;
+    padding: 0.85rem;
+    background-color: var(--neutral-dark);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-filled:hover {
+    background-color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Pantalla: Portada (index.html)
+   ========================================================================== */
+
+.cover-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+}
+
+.cover-card {
+    max-width: 720px;
+    padding: 3rem;
+    text-align: center;
+}
+
+.cover-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.cover-card h2 {
+    font-size: 2.25rem;
+    color: var(--neutral-dark);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.cover-card .institution {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 2rem;
+}
+
+.cover-divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 2rem 0;
+}
+
+.authors-list {
+    list-style: none;
+    display: grid;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+}
+
+.authors-list li {
+    font-size: 1rem;
+    color: var(--neutral-dark);
+}
+
+.cover-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: #64748B;
+}
+
+.cover-meta strong {
+    color: var(--neutral-dark);
+}
+
+/* ==========================================================================
+   Pantalla: Autenticación (login.html)
+   ========================================================================== */
+
+.auth-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .auth-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.brand-side {
+    background-color: #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    text-align: left;
+}
+
+.brand-side h2 {
+    font-size: 2.5rem;
+    color: var(--neutral-dark);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.brand-side p {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 2rem;
+    max-width: 480px;
+}
+
+.badge-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.form-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.form-side .surface-card {
+    max-width: 440px;
+    padding: 2.5rem;
+}
+
+.tabs-selector {
+    display: flex;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 0.75rem;
+    background: none;
+    border: none;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #64748B;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: -2px;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-options a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.form-options a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,5 @@
+# Configuración local del entorno Claude Code (servidores de preview, settings locales)
+.claude/
+
+# Archivos del sistema operativo
+.DS_Store
