@@ -27,7 +27,6 @@ El prototipo está compuesto por pantallas HTML estáticas, navegables entre sí
 | 8 | Calificación y feedback del servicio | `calificacion.html` | Cliente |
 | 9 | Panel de administración general | `admin.html` | Administrador |
 
-> Actualmente solo `index.html` y `login.html` están implementados; el resto son destinos del menú pendientes de construir.
 
 ## Estilo del template
 
