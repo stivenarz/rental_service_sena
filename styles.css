@@ -244,9 +244,16 @@ body {
     grid-template-columns: 1fr;
 }
 
+.auth-container .brand-side {
+    display: none;
+}
+
 @media (min-width: 768px) {
     .auth-container {
         grid-template-columns: 1fr 1fr;
+    }
+    .auth-container .brand-side {
+        display: flex;
     }
 }
 
