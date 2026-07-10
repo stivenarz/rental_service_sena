@@ -348,3 +348,18 @@ body {
 .form-options a:hover {
     text-decoration: underline;
 }
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: normal;
+    color: #475569;
+    cursor: pointer;
+}
