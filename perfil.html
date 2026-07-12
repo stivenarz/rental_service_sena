@@ -1,3 +1,10 @@
+<!-- ==========================================================================
+   AUTOR: Jhon fredy quiroz gomez
+   FECHA: 12/07/2026
+   DESCRIPCIÓN:  Vista de Perfil Público y Reputación del Proveedor
+   ========================================================================== -->
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,11 +41,13 @@
                     <p>Especialista en instalaciones, soporte técnico y mantenimiento para equipos audiovisuales.</p>
                 </div>
             </div>
-            <div class="profile-score">
-                <span class="score-number">4.8</span>
+            <div class="profile-score" id="rating-widget" data-rating="4.8" data-max="5" data-reviews="128">
                 <div>
-                    <div class="stars-row">★★★★★</div>
-                    <p>Basado en 128 reseñas</p>
+                    <span class="score-number" id="score-number">4.8</span>
+                    <div class="score-sub">
+                        <div id="stars" class="stars-row" aria-hidden="true">★★★★★</div>
+                        <p id="reviews-count">Basado en 128 reseñas</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -73,11 +82,11 @@
                     </div>
                 </div>
 
-                <div class="chips-row">
-                    <span class="status-chip chip-success">✓ Identidad verificada</span>
-                    <span class="status-chip chip-info">⚡ Respuesta rápida</span>
-                    <span class="status-chip chip-success">🛡️ Seguro</span>
-                    <span class="status-chip chip-warning">⭐ 10 años de experiencia</span>
+                <div class="chips-row" id="assist-chips">
+                    <button class="assist-chip assist-chip--verified" data-verified="true">✓ Identidad verificada</button>
+                    <button class="assist-chip" data-verified="false">⚡ Respuesta rápida</button>
+                    <button class="assist-chip assist-chip--verified" data-verified="true">🛡️ Seguro</button>
+                    <button class="assist-chip" data-verified="false">⭐ 10 años de experiencia</button>
                 </div>
             </article>
 
@@ -104,5 +113,39 @@
             <a href="#ayuda">Ayuda</a>
         </div>
     </footer>
+    <script>
+    (function(){
+        const widget = document.getElementById('rating-widget');
+        if(!widget) return;
+        const rating = parseFloat(widget.dataset.rating) || 0;
+        const max = parseInt(widget.dataset.max) || 5;
+        const reviews = parseInt(widget.dataset.reviews) || 0;
+
+        const starsEl = document.getElementById('stars');
+        const scoreNumber = document.getElementById('score-number');
+        const reviewsCount = document.getElementById('reviews-count');
+
+        if(scoreNumber) scoreNumber.textContent = rating.toFixed(1);
+        if(reviewsCount) reviewsCount.textContent = `Basado en ${reviews} reseñas`;
+
+        if(starsEl){
+            const full = Math.floor(rating);
+            const half = (rating - full) >= 0.5;
+            let html = '';
+            for(let i=0;i<full;i++) html += '★';
+            if(half) html += '☆';
+            const empty = max - full - (half?1:0);
+            for(let i=0;i<empty;i++) html += '☆';
+            starsEl.textContent = html;
+        }
+
+        const chips = document.querySelectorAll('#assist-chips .assist-chip');
+        chips.forEach(chip=>{
+            chip.addEventListener('click', ()=>{
+                chip.classList.toggle('assist-chip--active');
+            });
+        });
+    })();
+    </script>
 </body>
 </html>

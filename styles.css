@@ -957,6 +957,33 @@ th {
     font-size: 1.1rem;
 }
 
+/* Score widget */
+.score-sub {
+    text-align: right;
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.assist-chip {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.assist-chip--verified {
+    background: linear-gradient(90deg, #ecfdf5, #dcfce7);
+    border-color: #bbf7d0;
+    color: #065f46;
+}
+
+.assist-chip--active {
+    box-shadow: 0 6px 12px rgba(16,24,40,0.08);
+    transform: translateY(-2px);
+}
+
 .profile-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
