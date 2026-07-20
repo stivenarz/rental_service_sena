@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar servicio - rental service</title>
+    <style>
+        /* variable de color corporativas [5-8] */
+        :root {
+            --azul-conectividad: #0F4C81;
+            --oro-calidad: #D69E2E;
+            --blaco-humo: #F8F9FA;
+            --blanco-puro: #FFFFFF;
+            --antracita: #1A202C;
+            --gris-medio: #4A5568;
+            --rojo-alerta: #e53e3e; /* [9] */
+        }
+
+        body {
+            font-family: "segoe UI", Tahoma, geneva, verdana, sans-serif;
+            background-color: var(--blaco-humo);
+            color: var(--antracita);
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+/* Plantilla B: sidebar [1] */
+        .sidebar {
+            width: 250px;
+            background-color: var(--azul-conectividad);
+            color: var(--blanco-puro);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar h2 { font-size: 1.2rem; margin-bottom: 30px; }
+
+        .sidebar nav a {
+            color: var(--blanco-puro);
+            text-decoration: none;
+            margin: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: block;
+        }
+
+        /* Plantilla B: dashboard [2] */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            height: 60px;
+            background-color: var(--blanco-puro);
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+        }
+
+/* contenido del formulario (HU-005) [3, 4, 10] */
+.content {
+            padding: 30%;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .card {
+            background-color: var(--blanco-puro);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px  rgba(0, 0, 0, 0.1); /* [2] */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        /* Accesibilidad: Foco e interacción [11, 12] */
+        input:focus, select:focus, textarea:focus {
+            outline: 2px solid var(--azul-conectividad);
+            border-color: transparent;
+        }
+
+        /* Botón de Acción principal (oro calidad) [7, 13, 14 ] */
+        .btn-publish {
+            background-color: var(--oro-calidad);
+            color: var(--antracita);
+            border: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            min-height: 44px; /* Zona de contacto amplia [11] */
+            margin-top: 10px;
+        }
+
+        .btn-publish:hover {
+            filter: brightness(1.1);
+        }
+
+        /* Estilos MOviles [15] */
+        @media (max-width: 768px) {
+            .sidebar { display: none; } /* En movil se usaria menu hamburguesa */
+            .content { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación lateral (sidebar) -->
+    <aside class="sidebar">
+        <h2>rental service</h2>
+        <nav>
+            <a href="#">Mi perfil</a>
+            <a href="#" style="background: rgba(255, 255, 255, 0.1); padding-left: 10px;">gestión de servicios</a>
+            <a href="#">Solicitudes recibidas</a>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <!-- Barra superior (Header) [2]-->
+        <header class="header">
+            <header class="header">
+                <input type="text" placeholder="Buscar en dashboard..." style="width: 300px;">
+                <div class="user-actions">
+                    <span>Usuario</span>
+                    <span style="margin-left: 15px;"> mi cuenta</span>
+                </div>
+            </header>
+
+            <!-- Formulario de Publicacion (HU-005) [4, 16 ]-->
+            <main class="content">
+                <div class="card">
+                    <h1 style="color: var(--azul-conectividad); margin-top: 0;">publicar nuevo servicio</h1>
+                    <p style="color: ver(--gris-medio);"> complete los datos para dar visibilidad a su oferta en el marketplace.</p>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="titulo">titulo del servicio *</label>
+                            <input type="text" id="titulo" placeholder="ej: plomero certificado 24/7" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="categoria">categoria *</label>
+                            <select id="categoria" required>
+                                <option value="">seleccione una categoria</option>
+                                <option value="hogar">reparaciones del hoga</option>
+                                <option value="electricidad">electricidad</option>
+                                <option value="plomeria">plomeria</option>
+                                <option value="transporte">transporte</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ubicacion">ciudad/zona *</label>
+                            <textarea id="descripcion" rows="4" placeholder="describa su experiencia y que incluye el servicio..." required></textarea>
+                        </div>
+
+                        <!-- Boton Principal [13, 14] -->>
+                        <button type="submit" class="btn-publish">publicar servicio</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+
+
+    </body>
+    <html>
+    
+    </style>
+</head>
