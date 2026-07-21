@@ -686,6 +686,224 @@ body {
 }
 
 /* ==========================================================================
+   Pantalla: Panel de Administración General (admin.html)
+   ========================================================================== */
+
+.admin-page {
+    flex: 1;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+.admin-shell {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.admin-sidebar {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.admin-sidebar .sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.admin-sidebar .sidebar-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+}
+
+.admin-sidebar h2 {
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+}
+
+.admin-sidebar p,
+.admin-card p,
+.admin-list p {
+    color: #64748B;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.admin-nav a {
+    text-decoration: none;
+    color: var(--neutral-dark);
+    padding: 0.7rem 0.8rem;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.admin-nav a:hover,
+.admin-nav a.active {
+    background: rgba(159, 23, 42, 0.08);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.admin-card {
+    padding: 1rem;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+}
+
+.admin-card .label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    margin-bottom: 0.45rem;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.admin-stat {
+    padding: 1.2rem;
+}
+
+.admin-stat .summary-label {
+    color: #64748B;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.admin-stat h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.45rem;
+}
+
+.admin-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.admin-section {
+    padding: 1.5rem;
+}
+
+.admin-section h3 {
+    margin-bottom: 1rem;
+}
+
+.admin-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.admin-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: #fff;
+}
+
+.admin-list-item strong {
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.admin-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    font-family: var(--font-family);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.admin-btn.approve {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.admin-btn.reject {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.admin-btn.manage {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.admin-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #334155;
+    font-size: 0.9rem;
+}
+
+.admin-toggle input {
+    accent-color: var(--primary-color);
+}
+
+@media (max-width: 900px) {
+    .admin-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-page {
+        padding: 1rem;
+    }
+
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ==========================================================================
    Pantalla: Dashboard de Control de Servicios (dashboard.html)
    ========================================================================== */
 
