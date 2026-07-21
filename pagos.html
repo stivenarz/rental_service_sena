@@ -1,0 +1,138 @@
+<!-- ==========================================================================
+   AUTOR: daissy moreno 
+   FECHA: 20/07/2026
+   DESCRIPCIÓN: Pasarela de Pagos y Checkout de Facturación
+   ========================================================================== -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Service Marketplace - Pagos / Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>Rental Service Marketplace</h1>
+        <nav class="main-nav" aria-label="Navegación entre pantallas del prototipo">
+            <ul>
+                <li><a href="index.html">Portada</a></li>
+                <li><a href="login.html">Autenticación</a></li>
+                <li><a href="buscador.html">Buscador de Servicios</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="perfil.html">Perfil del Proveedor</a></li>
+                <li><a href="publicar-servicio.html">Publicar Servicio</a></li>
+                <li><a href="pagos.html" class="active">Pagos / Checkout</a></li>
+                <li><a href="calificacion.html">Calificación</a></li>
+                <li><a href="admin.html">Administración</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="search-container" style="padding:2rem;">
+        <section style="display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:1100px;margin:auto;width:100%;">
+            <h2 style="color:var(--primary-color);text-align:center;margin-bottom:0.5rem;">Pasarela de Pagos & Checkout de Facturación</h2>
+            <p style="text-align:center;color:#475569;max-width:900px;margin:0 auto 1rem;">Introduce los datos de facturación y método de pago para completar tu reserva. Este prototipo no realiza cargos reales.</p>
+
+            <div style="display:grid;grid-template-columns:1fr;gap:1rem;">
+                <article class="surface-card" style="padding:1.5rem;">
+                    <h3 style="margin-bottom:1rem;color:var(--neutral-dark);">Datos de Facturación</h3>
+
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <label for="billing-name">Nombre completo</label>
+                            <input id="billing-name" name="billing_name" class="text-field" placeholder="Nombre y apellidos" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="billing-email">Correo electrónico</label>
+                            <input id="billing-email" type="email" name="billing_email" class="text-field" placeholder="tu@correo.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="billing-address">Dirección de facturación</label>
+                            <input id="billing-address" name="billing_address" class="text-field" placeholder="Calle, número, ciudad" required>
+                        </div>
+
+                        <h4 style="margin-top:1rem;color:var(--neutral-dark);">Método de Pago</h4>
+
+                        <div class="form-group">
+                            <label class="radio-option"><input type="radio" name="pay_method" value="card" checked> Tarjeta de Crédito / Débito</label>
+                            <label class="radio-option"><input type="radio" name="pay_method" value="paypal"> PayPal (simulado)</label>
+                        </div>
+
+                        <div id="card-details">
+                            <div class="form-group">
+                                <label for="card-number">Número de tarjeta</label>
+                                <input id="card-number" name="card_number" class="text-field" placeholder="1234 5678 9012 3456" required>
+                            </div>
+
+                            <div style="display:flex;gap:0.75rem;">
+                                <div class="form-group" style="flex:1;">
+                                    <label for="card-exp">Expiración (MM/AA)</label>
+                                    <input id="card-exp" name="card_exp" class="text-field" placeholder="MM/AA" required>
+                                </div>
+                                <div class="form-group" style="width:140px;">
+                                    <label for="card-cvv">CVV</label>
+                                    <input id="card-cvv" name="card_cvv" class="text-field" placeholder="123" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-top:1rem;">
+                            <label for="notes">Notas (opcional)</label>
+                            <textarea id="notes" name="notes" class="text-field" style="min-height:80px;resize:vertical;padding:0.75rem;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-filled">Pagar ahora →</button>
+                    </form>
+                </article>
+
+                <aside class="surface-card" style="padding:1.5rem;">
+                    <h3 style="margin-bottom:1rem;color:var(--neutral-dark);">Resumen de Facturación</h3>
+                    <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;"><span>Servicio:</span><strong>Instalación de cortinas</strong></div>
+                    <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;"><span>Subtotal:</span><span>$60.000</span></div>
+                    <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;"><span>Impuestos (IVA):</span><span>$11.400</span></div>
+                    <hr style="border:none;border-top:1px solid var(--border-color);margin:1rem 0;">
+                    <div style="display:flex;justify-content:space-between;font-size:1.15rem;"><strong>Total:</strong><strong>$71.400</strong></div>
+
+                    <div style="margin-top:1rem;font-size:0.9rem;color:#64748B;">Métodos aceptados: Tarjeta, PayPal (simulados en prototipo).</div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Rental Service Marketplace. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#privacidad">Privacidad</a>
+            <a href="#terminos">Términos</a>
+            <a href="#ayuda">Ayuda</a>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('checkout-form');
+        const payMethodRadios = document.querySelectorAll('input[name="pay_method"]');
+        const cardDetails = document.getElementById('card-details');
+
+        function toggleCardDetails(){
+            const method = document.querySelector('input[name="pay_method"]:checked').value;
+            cardDetails.style.display = method === 'card' ? 'block' : 'none';
+        }
+
+        payMethodRadios.forEach(r => r.addEventListener('change', toggleCardDetails));
+        toggleCardDetails();
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Pago simulado exitoso. Gracias por su compra. (Prototipo)');
+            form.reset();
+            toggleCardDetails();
+        });
+    </script>
+
+</body>
+</html>
