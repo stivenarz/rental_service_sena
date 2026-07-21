@@ -1,0 +1,171 @@
+<!-- ==========================================================================
+   AUTOR: daissy moreno
+   FECHA: 20/07/2026
+   DESCRIPCIÓN: Panel de Administración General para gestión de usuarios y publicaciones
+   ========================================================================== -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Service Marketplace - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>Rental Service Marketplace</h1>
+        <nav class="main-nav" aria-label="Navegación entre pantallas del prototipo">
+            <ul>
+                <li><a href="index.html">Portada</a></li>
+                <li><a href="login.html">Autenticación</a></li>
+                <li><a href="buscador.html">Buscador de Servicios</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="perfil.html">Perfil del Proveedor</a></li>
+                <li><a href="publicar-servicio.html">Publicar Servicio</a></li>
+                <li><a href="pagos.html">Pagos / Checkout</a></li>
+                <li><a href="calificacion.html">Calificación</a></li>
+                <li><a href="admin.html" class="active">Administración</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="admin-page">
+        <section class="admin-shell">
+            <aside class="surface-card admin-sidebar" aria-label="Panel lateral administrativo">
+                <div class="sidebar-brand">
+                    <div class="sidebar-logo">AD</div>
+                    <div>
+                        <h2>Administración</h2>
+                        <p>Control general del marketplace</p>
+                    </div>
+                </div>
+
+                <nav class="admin-nav">
+                    <a href="#" class="active">Resumen</a>
+                    <a href="#usuarios">Usuarios</a>
+                    <a href="#publicaciones">Publicaciones</a>
+                    <a href="#seguridad">Seguridad</a>
+                </nav>
+
+                <div class="admin-card">
+                    <div class="label">Mantenimiento</div>
+                    <p>Revisa permisos, aprueba publicaciones y controla accesos de proveedores y clientes.</p>
+                </div>
+            </aside>
+
+            <section class="admin-content">
+                <div class="admin-stats">
+                    <article class="surface-card admin-stat">
+                        <div class="summary-label">Usuarios activos</div>
+                        <h3>1.248</h3>
+                        <p>+18% vs. semana anterior</p>
+                    </article>
+                    <article class="surface-card admin-stat">
+                        <div class="summary-label">Solicitudes pendientes</div>
+                        <h3>32</h3>
+                        <p>Publicaciones por revisar</p>
+                    </article>
+                    <article class="surface-card admin-stat">
+                        <div class="summary-label">Proveedores verificados</div>
+                        <h3>186</h3>
+                        <p>Con perfil validado</p>
+                    </article>
+                    <article class="surface-card admin-stat">
+                        <div class="summary-label">Reportes abiertos</div>
+                        <h3>7</h3>
+                        <p>Requieren seguimiento</p>
+                    </article>
+                </div>
+
+                <article class="surface-card admin-section" id="usuarios">
+                    <h3>Gestión de permisos de usuarios</h3>
+                    <div class="admin-list">
+                        <div class="admin-list-item">
+                            <div>
+                                <strong>María López</strong>
+                                <p>Cliente Premium · Último acceso: hoy</p>
+                            </div>
+                            <div class="admin-actions">
+                                <label class="admin-toggle"><input type="checkbox" checked> Permisos activos</label>
+                                <button class="admin-btn manage">Editar</button>
+                            </div>
+                        </div>
+
+                        <div class="admin-list-item">
+                            <div>
+                                <strong>Camilo Pérez</strong>
+                                <p>Proveedor · Especialidad: Electricidad</p>
+                            </div>
+                            <div class="admin-actions">
+                                <label class="admin-toggle"><input type="checkbox" checked> Acceso habilitado</label>
+                                <button class="admin-btn manage">Editar</button>
+                            </div>
+                        </div>
+
+                        <div class="admin-list-item">
+                            <div>
+                                <strong>Sofía Ramírez</strong>
+                                <p>Cliente · Reportes recientes: 1</p>
+                            </div>
+                            <div class="admin-actions">
+                                <label class="admin-toggle"><input type="checkbox"> Acceso restringido</label>
+                                <button class="admin-btn manage">Editar</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="surface-card admin-section" id="publicaciones">
+                    <h3>Aprobación de publicaciones de proveedores</h3>
+                    <div class="admin-list">
+                        <div class="admin-list-item">
+                            <div>
+                                <strong>Publicación: Pintura de interiores</strong>
+                                <p>Proveedor: Andrés Gómez · Ciudad: Medellín</p>
+                            </div>
+                            <div class="admin-actions">
+                                <button class="admin-btn approve">Aprobar</button>
+                                <button class="admin-btn reject">Rechazar</button>
+                            </div>
+                        </div>
+
+                        <div class="admin-list-item">
+                            <div>
+                                <strong>Publicación: Reparación de lavadoras</strong>
+                                <p>Proveedor: Laura Torres · Ciudad: Bogotá</p>
+                            </div>
+                            <div class="admin-actions">
+                                <button class="admin-btn approve">Aprobar</button>
+                                <button class="admin-btn reject">Rechazar</button>
+                            </div>
+                        </div>
+
+                        <div class="admin-list-item">
+                            <div>
+                                <strong>Publicación: Mudanza express</strong>
+                                <p>Proveedor: José Moreno · Ciudad: Cali</p>
+                            </div>
+                            <div class="admin-actions">
+                                <button class="admin-btn approve">Aprobar</button>
+                                <button class="admin-btn reject">Rechazar</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Rental Service Marketplace. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#privacidad">Privacidad</a>
+            <a href="#terminos">Términos</a>
+            <a href="#ayuda">Ayuda</a>
+        </div>
+    </footer>
+
+</body>
+</html>
